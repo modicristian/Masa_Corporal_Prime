@@ -13,25 +13,21 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/peso_Id"
             android:layout_width="match_parent"
             android:layout_height="38dp"
             android:text="Peso" />
 
         <TextView
-            android:id="@+id/altura_Id"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:text="Altura" />
 
         <TextView
-            android:id="@+id/genero_Id"
             android:layout_width="match_parent"
             android:layout_height="29dp"
             android:text="Genero" />
 
         <TextView
-            android:id="@+id/Edad_Id"
             android:layout_width="match_parent"
             android:layout_height="43dp"
             android:text="Edad" />
@@ -51,7 +47,7 @@
             android:layout_height="wrap_content" />
 
         <EditText
-            android:id="@+id/edt_Altura"
+            android:id="@+id/edt_Altura_Id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
