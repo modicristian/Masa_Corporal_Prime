@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.view.View;
 
 import com.max.masa_corporal.Actividad.Masa_Corporal;
-import com.max.masa_corporal.Actividad.calcula_tu_masa;
+import com.max.masa_corporal.Actividad.calcular_tu_masa;
 
 public class ListenerCalcular implements View.OnClickListener{
     Masa_Corporal context_MasaCorp;
@@ -15,7 +15,7 @@ public class ListenerCalcular implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-        Intent intent_Lst_Calcular=new Intent(context_MasaCorp,calcula_tu_masa.class);
+        Intent intent_Lst_Calcular=new Intent(context_MasaCorp,calcular_tu_masa.class);
         context_MasaCorp.startActivity(intent_Lst_Calcular);
     }
 }

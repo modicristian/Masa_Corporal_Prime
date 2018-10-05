@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.max.masa_corporal.R;
 
-public class calcula_tu_masa extends AppCompatActivity {
+public class calcular_tu_masa extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.acty_calcula_tu_masa);
+        setContentView(R.layout.acty_calcular_tu_masa);
     }
 }

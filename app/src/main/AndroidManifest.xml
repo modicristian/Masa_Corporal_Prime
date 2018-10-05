@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Actividad.calcula_tu_masa"></activity>
+        <activity android:name=".Actividad.calcular_tu_masa"></activity>
     </application>
 
 </manifest>
