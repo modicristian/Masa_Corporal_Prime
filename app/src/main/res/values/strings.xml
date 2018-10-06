@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Masa_Corporal</string>
     <string-array name="genero">
+        <item>Elija</item>
         <item>Hombre</item>
         <item>Mujer</item>
     </string-array>
