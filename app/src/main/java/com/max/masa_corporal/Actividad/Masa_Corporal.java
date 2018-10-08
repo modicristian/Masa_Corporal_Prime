@@ -16,7 +16,6 @@ public class Masa_Corporal extends AppCompatActivity {
     private EditText edtPeso,edtAltura,edtEdad;
     private Spinner spinGenero;
     private Button btoCalcular;
-    private ListenerCalcular listenerCalcular;
     private Toolbar toolbar;
 
     @Override

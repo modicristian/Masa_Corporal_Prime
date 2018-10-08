@@ -17,5 +17,6 @@ public class ListenerCalcular implements View.OnClickListener{
     public void onClick(View view) {
         Intent intent_Lst_Calcular=new Intent(context_MasaCorp,calcular_tu_masa.class);
         context_MasaCorp.startActivity(intent_Lst_Calcular);
+        //pasar datos del main con bolsa a este activity conservarelo en variables shared
     }
 }
