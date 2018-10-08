@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Masa_Corporal</string>
+    <string name="kg">Kg</string>
+    <string name="calcular">Calcular</string>
+    <string name="cm">Cm</string>
     <string-array name="genero">
         <item>Elija</item>
         <item>Hombre</item>

@@ -10,6 +10,6 @@ public class Activity_D extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.acty__d);
+        setContentView(R.layout.acty_d);
     }
 }
