@@ -11,9 +11,9 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="@android:color/darker_gray"
         android:elevation="40dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
     </android.support.v7.widget.Toolbar>
@@ -21,9 +21,10 @@
     <LinearLayout
         android:id="@+id/linear1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/toolbar">
+        android:layout_height="220dp"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,11 +39,13 @@
                 android:id="@+id/edt_Peso_Id"
                 android:layout_width="163dp"
                 android:layout_height="match_parent" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/kg" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,6 +60,7 @@
                 android:id="@+id/edt_Altura_Id"
                 android:layout_width="160dp"
                 android:layout_height="match_parent" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -66,6 +70,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="43dp"
+            android:layout_alignStart="@+id/linear1"
             android:orientation="horizontal">
 
             <TextView
@@ -79,9 +84,11 @@
                 android:layout_height="match_parent"
                 android:entries="@array/genero" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/linear1"
             android:orientation="horizontal">
 
             <TextView
@@ -95,6 +102,7 @@
                 android:layout_height="match_parent" />
         </LinearLayout>
     </LinearLayout>
+
     <Button
         android:id="@+id/Btn_Calcular_Id"
         android:layout_width="wrap_content"
@@ -102,9 +110,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="134dp"
-        android:layout_marginBottom="332dp"
-        android:background="@color/colorAccent"
+        android:layout_marginEnd="144dp"
+        android:layout_marginBottom="296dp"
+        android:background="@android:color/holo_green_dark"
         android:text="@string/calcular" />
 
 </RelativeLayout>
