@@ -2,14 +2,17 @@ package com.max.masa_corporal.SharedPreference;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.annotation.Nullable;
 
-import java.util.Map;
-import java.util.Set;
+import com.max.masa_corporal.Actividad.Masa_Corporal;
+import com.max.masa_corporal.Usuario.Usuario;
 
 public class SharedPrefe {
-public static void setSharedPreferenceVar(Context c, String value){
-    SharedPreferences sharedPreferences=new SharedPreferences("myShared",Context.MODE_PRIVATE);
-    SharedPreferences.Editor editor=sharedPreferences.edit();
-}
+    Masa_Corporal context;
+    public static void guardarValores(Context cont,String value){
+        SharedPreferences sharedPref= cont.getSharedPreferences("preferencias",Context.MODE_PRIVATE);
+        SharedPreferences.Editor  editor= sharedPref.edit();
+        editor.putInt("peso",)
+
+
+    }
 }

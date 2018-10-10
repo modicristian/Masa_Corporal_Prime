@@ -18,6 +18,22 @@ public class Masa_Corporal extends AppCompatActivity {
     private Button btoCalcular;
     private Toolbar toolbar;
 
+    public EditText getEdtPeso() {
+        return edtPeso;
+    }
+
+    public EditText getEdtAltura() {
+        return edtAltura;
+    }
+
+    public EditText getEdtEdad() {
+        return edtEdad;
+    }
+
+    public Spinner getSpinGenero() {
+        return spinGenero;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +44,8 @@ public class Masa_Corporal extends AppCompatActivity {
         edtEdad=findViewById(R.id.edt_Edad_Id);
         btoCalcular=findViewById(R.id.Btn_Calcular_Id);
         spinGenero=findViewById(R.id.Spin_Genero_Id);
+
+
 
         //Listener
         ListenerCalcular listenerCalcular=new ListenerCalcular(this);
