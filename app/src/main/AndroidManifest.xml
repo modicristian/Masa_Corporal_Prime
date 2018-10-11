@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Actividad.Activity_D"></activity>
         <activity android:name=".Actividad.Activity_C" />
-        <activity android:name=".Actividad.Masa_Corporal">
+        <activity android:name=".Actividad.mainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
