@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +15,11 @@ import android.widget.Spinner;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 import com.max.masa_corporal.R;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
 
 public class mainActivity extends AppCompatActivity {
     private EditText edtPeso,edtAltura,edtEdad;
@@ -111,8 +117,30 @@ public class mainActivity extends AppCompatActivity {
     public class jsonMasa extends AsyncTask<String,Void,String>{
 
         @Override
-        protected String doInBackground(String... strings) {
-            return null;
+        protected String doInBackground(String... url) {
+            InputStream inputStream = null;
+            String resultado=" ";
+            try{
+                inputStream=new URL(url[0]).openStream();
+                if(inputStream != null) {
+                    BufferedReader buffer = new BufferedReader( new InputStreamReader(inputStream));
+                    String line = "";
+                    while ((line = buffer.readLine()) != null)
+                        resultado += line;
+
+                    inputStream.close();
+                } else {
+                    // ERROR;
+                }
+
+            } catch (Exception e) {
+                // ERROR;
+                Log.d("InputStream", e.getLocalizedMessage());
+            }
+            return resultado;
+        }
+
+    }
         }
     }
 }
