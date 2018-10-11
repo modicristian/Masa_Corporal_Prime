@@ -2,6 +2,7 @@ package com.max.masa_corporal.Actividad;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -106,5 +107,12 @@ public class mainActivity extends AppCompatActivity {
                 break;
         }
         return true;
+    }
+    public class jsonMasa extends AsyncTask<String,Void,String>{
+
+        @Override
+        protected String doInBackground(String... strings) {
+            return null;
+        }
     }
 }
