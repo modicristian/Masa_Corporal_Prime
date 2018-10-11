@@ -1,5 +1,7 @@
 package com.max.masa_corporal.Actividad;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -25,6 +27,8 @@ public class mainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acty_main);
 
+
+
         edtPeso=findViewById(R.id.edt_Peso_Id);
         edtAltura=findViewById(R.id.edt_Altura_Id);
         edtEdad=findViewById(R.id.edt_Edad_Id);
@@ -36,6 +40,19 @@ public class mainActivity extends AppCompatActivity {
         txtResulEdad=findViewById(R.id.txtResulEdad);
 
 
+        SharedPreferences preferences=getSharedPreferences("valores",Context.MODE_PRIVATE);
+        txtResulPeso.setText(preferences.getString("peso"," "));
+        edtPeso.setText(preferences.getString("peso"," "));
+        txtResulAltura.setText(preferences.getString("altura"," "));
+        edtAltura.setText(preferences.getString("altura"," "));
+
+        txtResulGenero.setText(String.valueOf(preferences.getLong("genero",0l)));
+
+        Long valorCombo = preferences.getLong("genero",0l);
+
+        spinGenero.setSelection( valorCombo.intValue() );
+        txtResulEdad.setText(preferences.getString("edad"," "));
+        edtEdad.setText(preferences.getString("edad"," "));
 
         //TOOLBAR
         toolbar=findViewById(R.id.toolbar);
@@ -44,15 +61,30 @@ public class mainActivity extends AppCompatActivity {
         getSupportActionBar().setLogo(R.drawable.ic_launcher_foreground);   //logo
     }
     public void onClick(View view){
+
+        //Shared
+        SharedPreferences preferences=getSharedPreferences("valores", Context.MODE_PRIVATE);
+
         String peso=edtPeso.getText().toString();
-        txtResulPeso.setText(peso+" Kg ");
         String altura=edtAltura.getText().toString();
-        txtResulAltura.setText(altura+" Cm ");
-        String genero=spinGenero.getSelectedItem().toString();
-        txtResulGenero.setText(genero);
+        Long genero= spinGenero.getSelectedItemId();
         String edad=edtEdad.getText().toString();
+
+
+        SharedPreferences.Editor editor=preferences.edit();
+
+        editor.putString("peso",peso);
+        editor.putString("altura",altura);
+        editor.putLong("genero",genero);
+        editor.putString("edad",edad);
+        editor.commit();
+
+        txtResulPeso.setText(peso+" Kg ");
+        txtResulAltura.setText(altura+" Cm ");
+        txtResulGenero.setText(String.valueOf(genero));
         txtResulEdad.setText(edad+" Edad");
     }
+
     //<<<Menu 3 puntos>>>
     @Override
     public boolean onCreateOptionsMenu(Menu me) {
