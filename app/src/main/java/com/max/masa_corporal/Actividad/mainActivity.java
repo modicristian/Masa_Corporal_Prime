@@ -56,18 +56,20 @@ public class mainActivity extends AppCompatActivity {
 
 
         SharedPreferences preferences=getSharedPreferences("valores",Context.MODE_PRIVATE);
-        txtResulPeso.setText(preferences.getString("peso"," "));
+        //EditText
         edtPeso.setText(preferences.getString("peso"," "));
-        txtResulAltura.setText(preferences.getString("altura"," "));
         edtAltura.setText(preferences.getString("altura"," "));
-
-        txtResulGenero.setText(String.valueOf(preferences.getLong("genero",0l)));
-
         Long valorCombo = preferences.getLong("genero",0l);
-
         spinGenero.setSelection( valorCombo.intValue() );
-        txtResulEdad.setText(preferences.getString("edad"," "));
         edtEdad.setText(preferences.getString("edad"," "));
+
+        //TextEdit
+        txtResulPeso.setText(preferences.getString("peso"," "));
+        txtResulAltura.setText(preferences.getString("altura"," "));
+        txtResulGenero.setText(String.valueOf(preferences.getLong("genero",0l)));
+        txtResulEdad.setText(preferences.getString("edad"," "));
+
+
 
         //TOOLBAR
         toolbar=findViewById(R.id.toolbar);
@@ -132,8 +134,8 @@ public class mainActivity extends AppCompatActivity {
 
         jsonMasa(String peso, String altura, Long genero,String edad){
             String generoJson="";
-            if(genero==1){generoJson="m"}
-            if(genero==2){generoJson="f"}
+            if(genero==1){generoJson="m";}
+            if(genero==2){generoJson="f";}
             data = "{ \"weight\": { \"value\": \""+peso+"\", \"unit\": \"kg\" }, \"height\": { \"value\": \""+altura+"\", \"unit\": \"cm\" }, \"sex\": \""+generoJson+"\", \"age\": \""+edad+"\",\"waist\": \"34.00\", \"hip\": \"40.00\" }\n";
 
         }
