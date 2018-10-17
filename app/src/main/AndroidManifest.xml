@@ -21,4 +21,6 @@
         <activity android:name=".Actividad.calcular_tu_masa" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
 </manifest>

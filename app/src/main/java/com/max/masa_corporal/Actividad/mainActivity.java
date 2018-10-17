@@ -130,13 +130,14 @@ public class mainActivity extends AppCompatActivity {
 
     public class jsonMasa extends AsyncTask<String,Void,String>{
 
-        String data = " ";
+        String data = "";
 
         jsonMasa(String peso, String altura, Long genero,String edad){
             String generoJson="";
             if(genero==1){generoJson="m";}
             if(genero==2){generoJson="f";}
-            data = "{ \"weight\": { \"value\": \""+peso+"\", \"unit\": \"kg\" }, \"height\": { \"value\": \""+altura+"\", \"unit\": \"cm\" }, \"sex\": \""+generoJson+"\", \"age\": \""+edad+"\",\"waist\": \"34.00\", \"hip\": \"40.00\" }\n";
+            data = "{ \"weight\": { \"value\": \""+peso+"\", \"unit\": \"kg\" }, \"height\": { \"value\":\""+altura+"\", \"unit\": \"cm\" }, \"sex\": \""+generoJson+"\", \"age\":\""+edad+"\",\"waist\": \"34.00\", \"hip\": \"40.00\" }\n";
+            //data = "{ \"weight\": { \"value\": \"85.00\", \"unit\": \"kg\" }, \"height\": { \"value\": \"169.00\", \"unit\": \"cm\" }, \"sex\": \"m\", \"age\": \"40\", \"waist\": \"34.00\", \"hip\": \"40.00\" }\n";
 
         }
 
@@ -145,6 +146,7 @@ public class mainActivity extends AppCompatActivity {
             InputStream inputStream = null;
             String result = "";
             HttpURLConnection httpcon;
+
 
 
             try {
