@@ -1,6 +1,7 @@
 package com.max.masa_corporal.Actividad;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.support.v7.widget.Toolbar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.max.masa_corporal.R;
@@ -31,7 +31,6 @@ import java.net.URL;
 
 public class mainActivity extends AppCompatActivity {
     private EditText edtPeso,edtAltura,edtEdad;
-    private TextView txtResulPeso,txtResulAltura,txtResulGenero,txtResulEdad;
     private Spinner spinGenero;
     private Button btoCalcular;
     private Toolbar toolbar;
@@ -49,10 +48,6 @@ public class mainActivity extends AppCompatActivity {
         edtEdad=findViewById(R.id.edt_Edad_Id);
         btoCalcular=findViewById(R.id.Btn_Calcular_Id);
         spinGenero=findViewById(R.id.Spin_Genero_Id);
-        txtResulPeso=findViewById(R.id.txtResulPeso);
-        txtResulAltura=findViewById(R.id.txtResulAltura);
-        txtResulGenero=findViewById(R.id.txtResulGenero);
-        txtResulEdad=findViewById(R.id.txtResulEdad);
 
 
         SharedPreferences preferences=getSharedPreferences("valores",Context.MODE_PRIVATE);
@@ -62,13 +57,6 @@ public class mainActivity extends AppCompatActivity {
         Long valorCombo = preferences.getLong("genero",0l);
         spinGenero.setSelection( valorCombo.intValue() );
         edtEdad.setText(preferences.getString("edad"," "));
-
-        //TextEdit
-        txtResulPeso.setText(preferences.getString("peso"," "));
-        txtResulAltura.setText(preferences.getString("altura"," "));
-        txtResulGenero.setText(String.valueOf(preferences.getLong("genero",0l)));
-        txtResulEdad.setText(preferences.getString("edad"," "));
-
 
 
         //TOOLBAR
@@ -99,10 +87,9 @@ public class mainActivity extends AppCompatActivity {
 
         new jsonMasa(peso, altura, genero, edad).execute("https://bmi.p.mashape.com/");
 
-        txtResulPeso.setText(peso+" Kg ");
-        txtResulAltura.setText(altura+" Cm ");
-        txtResulGenero.setText(String.valueOf(genero));
-        txtResulEdad.setText(edad+" Edad");
+        Intent intent = new Intent(this,calcular_tu_masa.class);
+        this.startActivity(intent);
+
     }
 
     //<<<Menu 3 puntos>>>
@@ -192,12 +179,23 @@ public class mainActivity extends AppCompatActivity {
             try{
                 JSONObject jsonObject = new JSONObject(s);
                 JSONObject jsonBmi=jsonObject.getJSONObject("bmi");
-                String valuej =jsonBmi.getString("value");
-                String statusj= jsonBmi.getString("status");
-                String riskj= jsonBmi.getString("risk");
 
+                String valueJason =jsonBmi.getString("value");
+                String statusJason= jsonBmi.getString("status");
+                String ideal_weightJason =jsonObject.getString("ideal_weight");
+                String riskJason= jsonBmi.getString("risk");
 
+            /*<<<<Paso los valores obtenidos por el sharedPreference>>>>>*/
+                SharedPreferences shared = getSharedPreferences("valores",Context.MODE_PRIVATE);
 
+                SharedPreferences.Editor editor = shared.edit();
+
+                editor.putString("value",valueJason);
+                editor.putString("status",statusJason);
+                editor.putString("ideal_weight",ideal_weightJason);
+                editor.putString("risk",riskJason);
+
+                editor.commit();
 
 
             } catch (Exception e) {

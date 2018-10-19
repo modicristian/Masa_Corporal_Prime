@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.max.masa_corporal.R;
 
-public class Activity_C extends AppCompatActivity {
+public class Act_Lista extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

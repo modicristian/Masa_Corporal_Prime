@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Actividad.calcular_tu_masa">
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <LinearLayout
@@ -18,8 +18,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tu Masa Corporal Es: "/>
-            <EditText
-                android:id="@+id/edt_resul_bto_calcular"
+
+            <TextView
+                android:id="@+id/editTuMasa"
+                android:text="texto"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -34,10 +37,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Estado"/>
-            <EditText
-                android:id="@+id/edt_estado_Id"
+
+            <TextView
+                android:id="@+id/editTuEstado"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textStyle="bold" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -48,18 +53,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tu peso ideal esta entre "/>
-            <EditText
-                android:id="@+id/edt_tu_peso_ideal_esta_Id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" y "/>
-            <EditText
-                android:id="@+id/edt_tu_peso_ideal_esta_Id2"
+                android:textStyle="bold"
+                android:id="@+id/editTuPesoIdeal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -69,8 +68,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rieso:"/>
-            <EditText
-                android:id="@+id/edt_Riesgo_Id"
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/editTuRiesgo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
