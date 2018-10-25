@@ -13,8 +13,8 @@ public class Act_Lista extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.acty_c);
+        setContentView(R.layout.lista);
 
-        listView = findViewById(R.di.listView);
+        listView = findViewById(R.id.listView);
     }
 }
